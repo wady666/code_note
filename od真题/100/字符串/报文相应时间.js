@@ -28,8 +28,8 @@ rl.on("line", (input) => {
           curMinTime = arrivalTime[i] + maxRespCode[i];
         } else {
           let binaryNumber = maxRespCode[i].toString(2);
-          let exp = parseInt(binaryNumber.substring(0, 3),2);
-          let mant = parseInt(binaryNumber.substring(3, 7),2);
+          let exp = parseInt(binaryNumber.substring(0, 3), 2);
+          let mant = parseInt(binaryNumber.substring(3, 7), 2);
           let currespCode = (mant | 0x10) << (exp + 3);
           curMinTime = arrivalTime[i] + currespCode;
         }

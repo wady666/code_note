@@ -31,6 +31,7 @@ rl.on("line", (line) => {
     });
     let dp = new Array(workTime + 1).fill(0);
     for (let i = 0; i < n; i++) {
+      // 零一背包 从后往前
       for (let j = workTime; j >= times[i]; j--) {
         dp[j] = Math.max(dp[j], dp[j - times[i]] + value[i]);
       }
